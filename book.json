@@ -1,0 +1,75 @@
+{
+    "title": "Kubernetes 加固指南（美国国家安全局出品）- Jimmy Song",
+    "description": "",
+    "language": "zh-hans",
+    "author": "【著】NSA（美国国家安全局），【译】Jimmy Song（宋净超）",
+    "links": {
+        "sidebar": {
+            "回到主页": "https://jimmysong.io",
+            "云原生开源项目大全": "https://jimmysong.io/awesome-cloud-native",
+            "云原生社区": "https://cloudnative.to"
+        }
+    },
+    "plugins": [
+        "github",
+        "codesnippet",
+        "splitter",
+        "page-toc-button",
+        "image-captions",
+        "editlink",
+        "back-to-top-button",
+        "-lunr", "-search", "search-plus",
+        "github-buttons@2.1.0",
+        "favicon@^0.0.2",
+        "tbfed-pagefooter@^0.0.1",
+        "3-ba",
+        "theme-default",
+        "-highlight", "prism", "prism-themes",
+        "lightbox",
+        "ga",
+        "sitemap-general"
+    ],
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+        "github": {
+            "url": "https://github.com/rootsongjc/kubernetes-hardening-guidance"
+        },
+        "editlink": {
+            "base": "https://github.com/rootsongjc/kubernetes-hardening-guidance/blob/master/",
+            "label": "编辑本页"
+        },
+        "image-captions": {
+            "caption": "_CAPTION_"
+        },
+        "github-buttons": {
+            "repo": "rootsongjc/kubernetes-hardening-guidance",
+            "types": ["star"],
+            "size": "small"
+        },
+        "tbfed-pagefooter": {
+            "copyright": "本书基于 <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh>CC 4.0 协议</a> 发布 | <a href=https://jimmysong.io>Jimmy Song </a>",
+            "modify_label": " Updated at ",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "favicon": {
+            "shortcut": "favicon.ico",
+            "bookmark": "favicon.ico"
+        },
+        "3-ba": {
+            "token": "11f7d254cfa4e0ca44b175c66d379ecc"
+        },
+        "prism": {
+            "css": [
+            "prism-themes/themes/prism-ghcolors.css"
+            ]
+        },
+        "sitemap-general": {
+            "prefix": "https://jimmysong.io/kubernetes-hardening-guidance/"
+        },
+        "ga": {
+            "token": "UA-93485976-1"
+        }
+    }
+}
