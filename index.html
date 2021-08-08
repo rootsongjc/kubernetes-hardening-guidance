@@ -1,0 +1,701 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>说明 · Kubernetes 加固指南（美国国家安全局出品）- Jimmy Song</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="【著】NSA（美国国家安全局），【译】Jimmy Song（宋净超）">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-ghcolors.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="notices-and-hitory.html" />
+    
+    
+
+    
+        <link rel="shortcut icon" href='favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"rootsongjc/kubernetes-hardening-guidance","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://jimmysong.io" target="_blank" class="custom-link">回到主页</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://jimmysong.io/awesome-cloud-native" target="_blank" class="custom-link">云原生开源项目大全</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://cloudnative.to" target="_blank" class="custom-link">云原生社区</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">开始</li>
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="notices-and-hitory.html">
+            
+                <a href="notices-and-hitory.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    通知和历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="publication-information.html">
+            
+                <a href="publication-information.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    出版信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="executive-summary.html">
+            
+                <a href="executive-summary.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    执行摘要
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">正文</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="threat-model.html">
+            
+                <a href="threat-model.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    威胁模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="kubernetes-pod-security.html">
+            
+                <a href="kubernetes-pod-security.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Kubernetes Pod 安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="network-separation-and-hardening.html">
+            
+                <a href="network-separation-and-hardening.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    网络隔离和加固
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="authentication-and-authorization.html">
+            
+                <a href="authentication-and-authorization.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    认证和授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="logging.html">
+            
+                <a href="logging.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    日志审计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="upgrading-and-application-security-practices.html">
+            
+                <a href="upgrading-and-application-security-practices.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    升级和应用安全实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">附录</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="appendix/a.html">
+            
+                <a href="appendix/a.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    附录 A：非 root 应用的 Dockerfile 示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="appendix/b.html">
+            
+                <a href="appendix/b.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    附录 B：只读文件系统的部署模板示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="appendix/c.html">
+            
+                <a href="appendix/c.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    附录 C：Pod 安全策略示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="appendix/d.html">
+            
+                <a href="appendix/d.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    附录 D：命名空间示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="appendix/e.html">
+            
+                <a href="appendix/e.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    附录 E：网络策略示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="appendix/f.html">
+            
+                <a href="appendix/f.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    附录 F：LimitRange 示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="appendix/g.html">
+            
+                <a href="appendix/g.html">
+            
+                    
+                        <b>3.7.</b>
+                    
+                    附录 G：ResourceQuota 示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="appendix/h.html">
+            
+                <a href="appendix/h.html">
+            
+                    
+                        <b>3.8.</b>
+                    
+                    附录 H：加密示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="appendix/i.html">
+            
+                <a href="appendix/i.html">
+            
+                    
+                        <b>3.9.</b>
+                    
+                    附录 I：KMS 配置实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="appendix/j.html">
+            
+                <a href="appendix/j.html">
+            
+                    
+                        <b>3.10.</b>
+                    
+                    附录 J：pod-reader RBAC 角色
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="appendix/k.html">
+            
+                <a href="appendix/k.html">
+            
+                    
+                        <b>3.11.</b>
+                    
+                    附录 K：RBAC RoleBinding 和 ClusterRoleBinding 示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="appendix/l.html">
+            
+                <a href="appendix/l.html">
+            
+                    
+                        <b>3.12.</b>
+                    
+                    附录 L：审计策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="appendix/m.html">
+            
+                <a href="appendix/m.html">
+            
+                    
+                        <b>3.13.</b>
+                    
+                    附录 M：向 kube-apiserver 提交审计策略文件的标志示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="appendix/n.html">
+            
+                <a href="appendix/n.html">
+            
+                    
+                        <b>3.14.</b>
+                    
+                    附录 N：webhook 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >说明</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x300A;kubernetes-&#x52A0;&#x56FA;&#x6307;&#x5357;&#x300B;&#x4E2D;&#x6587;&#x7248;">&#x300A;Kubernetes &#x52A0;&#x56FA;&#x6307;&#x5357;&#x300B;&#x4E2D;&#x6587;&#x7248;</h1>
+<p><em>Kubernetes Hardening Guidance</em>&#xFF08;<a href="https://media.defense.gov/2021/Aug/03/2002820425/-1/-1/1/CTR_KUBERNETES%20HARDENING%20GUIDANCE.PDF" target="_blank">&#x82F1;&#x6587;&#x539F;&#x7248; PDF</a>&#xFF09; &#x662F;&#x7531;&#x7F8E;&#x56FD;&#x56FD;&#x5BB6;&#x5B89;&#x5168;&#x5C40;&#xFF08;CSA&#xFF09;&#x4E8E; 2021 &#x5E74; 8 &#x6708;&#x53D1;&#x5E03;&#x7684;&#xFF0C;&#x8BE6;&#x89C1;<a href="publication-infomation.md">&#x51FA;&#x7248;&#x4FE1;&#x606F;</a>&#x3002;&#x5176;&#x4E2D;&#x6587;&#x7248;&#x300A;Kubernetes &#x52A0;&#x56FA;&#x6307;&#x5357;&#x300B;&#xFF08;&#x6216;&#x88AB;&#x79F0;&#x4F5C;&#x300A;Kubernetes &#x5F3A;&#x5316;&#x6307;&#x5357;&#x300B;&#xFF09;&#x662F;&#x7531; <a href="https://jimmysong.i" target="_blank">Jimmy Song</a> &#x7FFB;&#x8BD1;&#xFF0C;<a href="https://jimmysong.io/kubernetes-hardening-guidance" target="_blank">&#x70B9;&#x51FB;&#x5728;&#x7EBF;&#x9605;&#x8BFB;</a>&#xFF0C;&#x5982;&#x60A8;&#x53D1;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;&#x6B22;&#x8FCE;&#x5728;<a href="https://github.com/rootsongjc/kubernetes-hardening-guidance" target="_blank">GitHub</a>&#x4E0A;&#x63D0;&#x4EA4;&#x52D8;&#x8BEF;&#x3002;</p>
+<figure id="fig1.1.1"><a href="cover.jpg" data-lightbox="4126d403-c9db-4c6a-9189-94ad696f45aa" data-title="&#x300A;Kubernetes &#x52A0;&#x56FA;&#x6307;&#x5357;&#x300B;&#x5C01;&#x9762;"><img src="cover.jpg" alt="&#x300A;Kubernetes &#x52A0;&#x56FA;&#x6307;&#x5357;&#x300B;&#x5C01;&#x9762;"></a><figcaption>&#x300A;Kubernetes &#x52A0;&#x56FA;&#x6307;&#x5357;&#x300B;&#x5C01;&#x9762;</figcaption></figure>
+<h2 id="&#x8BB8;&#x53EF;&#x8BC1;">&#x8BB8;&#x53EF;&#x8BC1;</h2>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">&#x7F72;&#x540D; - &#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; - &#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0 (CC BY-NC-SA 4.0)</a>  &#x534F;&#x8BAE;&#x5171;&#x4EAB;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">&#x672C;&#x4E66;&#x57FA;&#x4E8E; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC 4.0 &#x534F;&#x8BAE;</a> &#x53D1;&#x5E03; | <a href="https://jimmysong.io" target="_blank">Jimmy Song </a> all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"> Updated at 
+2021-08-08 14:52:58
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="notices-and-hitory.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 通知和历史">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"说明","level":"1.1","depth":1,"next":{"title":"通知和历史","level":"1.2","depth":1,"path":"notices-and-hitory.md","ref":"notices-and-hitory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","codesnippet","splitter","page-toc-button","image-captions","editlink","back-to-top-button","-lunr","-search","search-plus","github-buttons@2.1.0","favicon@^0.0.2","tbfed-pagefooter@^0.0.1","3-ba","theme-default","-highlight","prism","prism-themes","lightbox","ga","sitemap-general"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"本书基于 <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh>CC 4.0 协议</a> 发布 | <a href=https://jimmysong.io>Jimmy Song </a>","modify_label":" Updated at ","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-ghcolors.css"]},"github":{"url":"https://github.com/rootsongjc/kubernetes-hardening-guidance"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/rootsongjc/kubernetes-hardening-guidance/blob/master/"},"splitter":{},"codesnippet":{},"sitemap-general":{"prefix":"https://jimmysong.io/kubernetes-hardening-guidance/"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"page-toc-button":{},"back-to-top-button":{},"prism-themes":{},"github-buttons":{"repo":"rootsongjc/kubernetes-hardening-guidance","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"11f7d254cfa4e0ca44b175c66d379ecc"},"ga":{"configuration":"auto","token":"UA-93485976-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"【著】NSA（美国国家安全局），【译】Jimmy Song（宋净超）","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: 《Kubernetes 加固指南》封面","alt":"《Kubernetes 加固指南》封面","nro":1,"url":"cover.jpg","index":1,"caption_template":"_CAPTION_","label":"《Kubernetes 加固指南》封面","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"introduction.html#fig2.1.1","level":"2.1","list_caption":"Figure: 图1：Kubernetes集群组件的高层视图","alt":"图1：Kubernetes集群组件的高层视图","nro":2,"url":"images/f1.jpg","index":1,"caption_template":"_CAPTION_","label":"图1：Kubernetes集群组件的高层视图","attributes":{},"skip":false,"key":"2.1.1"},{"backlink":"kubernetes-pod-security.html#fig2.3.1","level":"2.3","list_caption":"Figure: 图3：有 sidecar 代理作为日志容器的 Pod 组件","alt":"图3：有 sidecar 代理作为日志容器的 Pod 组件","nro":3,"url":"images/f3.jpg","index":1,"caption_template":"_CAPTION_","label":"图3：有 sidecar 代理作为日志容器的 Pod 组件","attributes":{},"skip":false,"key":"2.3.1"},{"backlink":"kubernetes-pod-security.html#fig2.3.2","level":"2.3","list_caption":"Figure: 图4：容器的构建工作流程，用 webhook 和准入控制器进行优化","alt":"图4：容器的构建工作流程，用 webhook 和准入控制器进行优化","nro":4,"url":"images/f4.jpg","index":2,"caption_template":"_CAPTION_","label":"图4：容器的构建工作流程，用 webhook 和准入控制器进行优化","attributes":{},"skip":false,"key":"2.3.2"},{"backlink":"logging.html#fig2.6.1","level":"2.6","list_caption":"Figure: 图5：集群利用服务网格，将日志与网络安全结合起来","alt":"图5：集群利用服务网格，将日志与网络安全结合起来","nro":5,"url":"images/f5.jpg","index":1,"caption_template":"_CAPTION_","label":"图5：集群利用服务网格，将日志与网络安全结合起来","attributes":{},"skip":false,"key":"2.6.1"}]},"title":"Kubernetes 加固指南（美国国家安全局出品）- Jimmy Song","language":"zh-hans","links":{"sidebar":{"回到主页":"https://jimmysong.io","云原生开源项目大全":"https://jimmysong.io/awesome-cloud-native","云原生社区":"https://cloudnative.to"}},"gitbook":"*","description":""},"file":{"path":"README.md","mtime":"2021-08-08T14:52:58.276Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-08T14:53:24.462Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
