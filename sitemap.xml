@@ -4,6 +4,7 @@
 <url> <loc>https://jimmysong.io/kubernetes-hardening-guidance/notices-and-hitory.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://jimmysong.io/kubernetes-hardening-guidance/publication-information.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://jimmysong.io/kubernetes-hardening-guidance/executive-summary.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://jimmysong.io/kubernetes-hardening-guidance/corrigendum.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://jimmysong.io/kubernetes-hardening-guidance/introduction.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://jimmysong.io/kubernetes-hardening-guidance/threat-model.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://jimmysong.io/kubernetes-hardening-guidance/kubernetes-pod-security.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
