@@ -6,6 +6,7 @@
 - [通知和历史](notices-and-hitory.md)
 - [出版信息](publication-information.md)
 - [执行摘要](executive-summary.md)
+- [勘误](corrigendum.md)
 
 ## 正文
 
