@@ -1,4 +1,4 @@
-## 附录 G：ResourceQuota 示例
+# 附录 G：ResourceQuota 示例
 
 通过将 YAML 文件应用于命名空间或在 Pod 的配置文件中指定要求来创建 `ResourceQuota` 对象，以限制命名空间内的总体资源使用。下面的例子是基于 [Kubernetes 官方文档](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/)的一个命名空间的配置文件示例：
 

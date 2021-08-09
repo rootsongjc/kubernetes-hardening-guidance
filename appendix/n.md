@@ -1,4 +1,4 @@
-## 附录 N：webhook 配置
+# 附录 N：webhook 配置
 
 YAML 文件示例：
 

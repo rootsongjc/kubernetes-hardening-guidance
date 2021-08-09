@@ -1,4 +1,4 @@
-## 附录 E：网络策略示例
+# 附录 E：网络策略示例
 
 网络策略根据使用的网络插件而不同。下面是一个网络策略的例子，参考 [Kubernetes 文档](https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/)将 nginx 服务的访问限制在带有标签访问的 Pod 上。
 

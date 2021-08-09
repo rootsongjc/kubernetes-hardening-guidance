@@ -1,4 +1,4 @@
-## 附录 C：Pod 安全策略示例
+# 附录 C：Pod 安全策略示例
 
 下面是一个 Kubernetes Pod 安全策略的例子，它为集群中运行的容器执行了强大的安全要求。这个例子是基于[官方的 Kubernetes 文档](https://kubernetes.io/docs/concepts/policy/pod-security-policy/)。我们鼓励管理员对该策略进行修改，以满足他们组织的要求。
 

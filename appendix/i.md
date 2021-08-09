@@ -1,4 +1,4 @@
-## 附录 I：KMS 配置实例
+# 附录 I：KMS 配置实例
 
 要用密钥管理服务（KMS）提供商插件来加密 Secret，可以使用以下加密配置 YAML 文件的例子来为提供商设置属性。这个例子是基于 [Kubernetes 的官方文档](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/)。
 

@@ -1,4 +1,4 @@
-## 附录 M：向 kube-apiserver 提交审计策略文件的标志示例
+# 附录 M：向 kube-apiserver 提交审计策略文件的标志示例
 
 在控制平面，用文本编辑器打开 `kube-apiserver.yaml` 文件。编辑 `kube-apiserver` 配置需要管理员权限。
 

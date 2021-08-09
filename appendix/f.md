@@ -1,4 +1,4 @@
-## 附录 F：LimitRange 示例
+# 附录 F：LimitRange 示例
 
 在 Kubernetes 1.10 和更新版本中，`LimitRange` 支持被默认启用。下面的 YAML 文件为每个容器指定了一个 `LimitRange`，其中有一个默认的请求和限制，以及最小和最大的请求。
 

@@ -1,4 +1,4 @@
-## 附录K：RBAC RoleBinding 和 ClusterRoleBinding 示例
+# 附录K：RBAC RoleBinding 和 ClusterRoleBinding 示例
 
 要创建一个 `RoleBinding`，需创建一个 YAML 文件，内容如下：
 

@@ -1,4 +1,4 @@
-## 附录 A：非 root 应用的 Dockerfile 示例
+# 附录 A：非 root 应用的 Dockerfile 示例
 
 下面的例子是一个 Dockerfile，它以非 root 用户和非 group 成员身份运行一个应用程序。
 
