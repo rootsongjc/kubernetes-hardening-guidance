@@ -6,6 +6,7 @@
     "links": {
         "sidebar": {
             "回到主页": "https://jimmysong.io",
+            "Kubernetes 中文指南": "https://jimmysong.io/kubernetes-handbook/",
             "云原生开源项目大全": "https://jimmysong.io/awesome-cloud-native",
             "云原生社区": "https://cloudnative.to"
         }
