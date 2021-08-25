@@ -11,7 +11,7 @@
 ## 正文
 
 - [简介](introduction.md)
-- [威胁模式](threat-model.md)
+- [威胁建模](threat-model.md)
 - [Kubernetes Pod 安全](kubernetes-pod-security.md)
 - [网络隔离和加固](network-separation-and-hardening.md)
 - [认证和授权](authentication-and-authorization.md)
