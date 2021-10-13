@@ -34,7 +34,7 @@ Pod 是 Kubernetes 中最小的可部署单元，由一个或多个容器组成�
 
 > Pod 的创建应遵守最小授权原则。
 
-Pod 安全策略（PSP）是一个集群范围内的策略，它规定了 Pod 在集群内执行的安全要求 / 默认值。虽然安全机制通常是在 Pod/Deployment 配置中指定的，但 PSP 建立了一个所有 Pod 必须遵守的最低安全门槛。一些 PSP 字段提供默认值，当 Pod 的配置省略某个字段时使用。其他 PSP 字段被用来拒绝创建不符合要求的 Pod。PSP 是通过 Kubernetes 准入控制器执行的，所以 PSP 只能在 Pod 创建期间执行要求。PSP 并不影响已经在集群中运行的 Pod。
+Pod 安全策略（PSP）[^1]是一个集群范围内的策略，它规定了 Pod 在集群内执行的安全要求 / 默认值。虽然安全机制通常是在 Pod/Deployment 配置中指定的，但 PSP 建立了一个所有 Pod 必须遵守的最低安全门槛。一些 PSP 字段提供默认值，当 Pod 的配置省略某个字段时使用。其他 PSP 字段被用来拒绝创建不符合要求的 Pod。PSP 是通过 Kubernetes 准入控制器执行的，所以 PSP 只能在 Pod 创建期间执行要求。PSP 并不影响已经在集群中运行的 Pod。
 
 PSP 很有用，可以在集群中强制执行安全措施。PSP 对于由具有分层角色的管理员管理的集群特别有效。在这些情况下，顶级管理员可以施加默认值，对低层级的管理员强制执行要求。NSA 和 CISA 鼓励企业根据自己的需要调整**[附录 C：Pod 安全策略示例](appendix/c.md)**中的 Kubernetes 加固 PSP 模板。下表描述了一些广泛适用的 PSP 组件。
 
@@ -74,3 +74,6 @@ kubectl get psp -n <namespace>
 一些平台和容器引擎提供了额外的选项来加固容器化环境。一个强有力的例子是使用管理程序来提供容器隔离。管理程序依靠硬件来执行虚拟化边界，而不是操作系统。管理程序隔离比传统的容器隔离更安全。在 Windows® 操作系统上运行的容器引擎可以被配置为使用内置的 Windows 管理程序 Hyper-V®，以增强安全性。
 
 此外，一些注重安全的容器引擎将每个容器部署在一个轻量级的管理程序中，以实现深度防御。由管理程序支持的容器可以减少容器的突破。
+
+
+[^1]:译者注：Pod Security Policy 已在 1.21 版本中宣布弃用，作为替代，1.22 引入了内置的 Pod Security Admission 控制器以及新的 Pod Security Standards 标准。[来源](https://kubernetes.io/blog/2021/04/06/podsecuritypolicy-deprecation-past-present-and-future/)
