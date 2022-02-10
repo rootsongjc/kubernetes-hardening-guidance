@@ -7,8 +7,8 @@
         "sidebar": {
             "回到主页": "https://jimmysong.io",
             "Kubernetes 中文指南": "https://jimmysong.io/kubernetes-handbook/",
-            "云原生开源项目大全": "https://jimmysong.io/awesome-cloud-native",
-            "云原生社区": "https://cloudnative.to"
+            "云原生开源项目大全": "https://jimmysong.io/awesome-cloud-native/",
+            "云原生社区": "https://cloudnative.to/"
         }
     },
     "plugins": [
@@ -28,7 +28,9 @@
         "-highlight", "prism", "prism-themes",
         "lightbox",
         "ga",
-        "sitemap-general"
+        "sitemap-general",
+        "insert-logo",
+        "hide-element"
     ],
     "pluginsConfig": {
         "theme-default": {
@@ -71,6 +73,13 @@
         },
         "ga": {
             "token": "UA-93485976-1"
+        },
+        "hide-element": {
+            "elements": [".gitbook-link"]
+        },
+        "insert-logo": {
+            "url": "https://jimmysong.io/images/logo-black-text.png",
+            "style": "background: none; max-height: 100px; min-height: 30px"
         }
     }
 }
