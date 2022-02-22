@@ -30,7 +30,8 @@
         "ga",
         "sitemap-general",
         "insert-logo",
-        "hide-element"
+        "hide-element",
+        "adsense"
     ],
     "pluginsConfig": {
         "theme-default": {
@@ -65,7 +66,7 @@
         },
         "prism": {
             "css": [
-            "prism-themes/themes/prism-ghcolors.css"
+                "prism-themes/themes/prism-ghcolors.css"
             ]
         },
         "sitemap-general": {
@@ -80,6 +81,13 @@
         "insert-logo": {
             "url": "https://jimmysong.io/images/logo-black-text.png",
             "style": "background: none; max-height: 100px; min-height: 30px"
+        },
+        "adsense": {
+            "client": "ca-pub-4029167986768912",
+            "slot": "2445941692",
+            "format": "auto",
+            "element": ".page-inner section",
+            "position": "bottom"
         }
     }
 }
