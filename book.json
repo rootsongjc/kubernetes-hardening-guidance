@@ -53,7 +53,7 @@
             "size": "small"
         },
         "tbfed-pagefooter": {
-            "copyright": "本书基于 <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh>CC 4.0 协议</a> 发布 | <a href=https://jimmysong.io>Jimmy Song </a>",
+            "copyright": "Copyright © 2017 - 2022 | 基于 <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh>CC 4.0 协议</a> 发布 | <a href=https://jimmysong.io>Jimmy Song </a>",
             "modify_label": " Updated at ",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
